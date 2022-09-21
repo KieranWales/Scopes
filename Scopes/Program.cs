@@ -13,6 +13,9 @@ namespace Scopes
             Console.WriteLine("What language do you want to be greeted with, english, german, french, spanish?");
             string chosenLanguage = Console.ReadLine();
             SayHello(chosenLanguage);
+
+            ShowOff();
+
             Console.ReadLine();
         }
 
@@ -21,19 +24,19 @@ namespace Scopes
             switch (language.ToLower())
             {
                 case "english":
-                    Console.WriteLine("Hello");
+                    Console.WriteLine($"You can say hello in {language} with hello");
                     break;
 
                 case "german":
-                    Console.WriteLine("Hallo");
+                    Console.WriteLine($"You can say hello in {language} with hallo");
                     break;
 
                 case "french":
-                    Console.WriteLine("Bonjour");
+                    Console.WriteLine($"You can say hello in {language} with bonjour");
                     break;
 
                 case "spanish":
-                    Console.WriteLine("Hola");
+                    Console.WriteLine($"You can say hello in {language} with hola");
                     break;
 
                 case "":
@@ -42,6 +45,15 @@ namespace Scopes
 
                 default:
                     break;
+            }
+        }
+
+        static void ShowOff()
+        {
+            string[] languages = { "english", "german", "french", "spanish" };
+            foreach (string language in languages)
+            {
+                SayHello(language);
             }
         }
     }
