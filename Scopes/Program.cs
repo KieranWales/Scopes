@@ -10,7 +10,10 @@ namespace Scopes
     {
         static void Main(string[] args)
         {
-            SayHello("");
+            Console.WriteLine("What language do you want to be greeted with, english, german, french, spanish?");
+            string chosenLanguage = Console.ReadLine();
+            SayHello(chosenLanguage);
+            Console.ReadLine();
         }
 
         private static void SayHello(string language)
@@ -31,6 +34,10 @@ namespace Scopes
 
                 case "spanish":
                     Console.WriteLine("Hola");
+                    break;
+
+                case "":
+                    Console.WriteLine("You didn't type anything");
                     break;
 
                 default:
